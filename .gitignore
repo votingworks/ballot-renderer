@@ -1,0 +1,12 @@
+coverage
+node_modules
+*.d.ts
+*.d.ts.map
+*.js
+*.tgz
+!*.config.js
+!*rc.js
+!**/types/**/*.d.ts
+output.pdf
+output.pdf.json
+.DS_Store

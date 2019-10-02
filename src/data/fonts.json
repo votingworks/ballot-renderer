@@ -1,0 +1,20 @@
+{
+  "HelveticaNeue": {
+    "normal": [
+      "HelveticaNeue.ttc",
+      "HelveticaNeue"
+    ],
+    "bold": [
+      "HelveticaNeue.ttc",
+      "HelveticaNeue-Bold"
+    ],
+    "italics": [
+      "HelveticaNeue.ttc",
+      "HelveticaNeue-Italic"
+    ],
+    "bolditalics": [
+      "HelveticaNeue.ttc",
+      "HelveticaNeue-BoldItalic"
+    ]
+  }
+}

@@ -1,4 +1,3 @@
-import * as s from '../../styles/definitions'
 import candidateSelection from './candidateSelection'
 
 test('builds an empty stack given no candidates', () => {
@@ -11,14 +10,10 @@ test('indicates write-in candidates', () => {
       [],
       [{ isWriteIn: true, id: 'write-in__BOB', name: 'BOB' }]
     )
-  ).toEqual({
+  ).toMatchObject({
     stack: [
       {
-        text: [
-          { text: 'BOB', style: s.contestResultCandidateName },
-          { text: ' ' },
-          { text: '(write-in)' },
-        ],
+        text: [{ text: 'BOB' }, { text: ' ' }, { text: '(write-in)' }],
       },
     ],
   })
@@ -30,11 +25,11 @@ test('indicates party for chosen candidates', () => {
       [{ id: 'federalist', name: 'Federalist', abbrev: 'F' }],
       [{ id: 'lindsay-bluth', name: 'Lindsay Bluth', partyId: 'federalist' }]
     )
-  ).toEqual({
+  ).toMatchObject({
     stack: [
       {
         text: [
-          { text: 'Lindsay Bluth', style: s.contestResultCandidateName },
+          { text: 'Lindsay Bluth' },
           { text: ' ' },
           { text: '/ Federalist' },
         ],
@@ -46,10 +41,10 @@ test('indicates party for chosen candidates', () => {
 test('omits party for chosen candidates if there is no party id', () => {
   expect(
     candidateSelection([], [{ id: 'lindsay-bluth', name: 'Lindsay Bluth' }])
-  ).toEqual({
+  ).toMatchObject({
     stack: [
       {
-        text: [{ text: 'Lindsay Bluth', style: s.contestResultCandidateName }],
+        text: [{ text: 'Lindsay Bluth' }],
       },
     ],
   })

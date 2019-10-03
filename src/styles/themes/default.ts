@@ -21,10 +21,6 @@ const DefaultStyleSheet: Readonly<{ [key: string]: pdfMake.Style }> = {
     margin: [0, 5],
   },
 
-  [s.contestResultCandidateName]: {
-    bold: true,
-  },
-
   [s.bold]: {
     bold: true,
   },

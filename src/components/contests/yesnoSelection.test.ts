@@ -35,19 +35,3 @@ test('builds text describing a vote with a short title', () => {
     text: 'No on Prop. Bacon',
   })
 })
-
-test('has the expected style', () => {
-  const contest: YesNoContest = {
-    description: 'Shall we dance?',
-    districtId: '1',
-    id: 'dance',
-    section: 'Bomont',
-    title: 'Dance?',
-    type: 'yesno',
-    shortTitle: '',
-  }
-
-  expect(yesnoSelection('yes', contest)).toMatchObject({
-    style: 'contest-result--voter-selection--yesno',
-  })
-})

@@ -1,5 +1,4 @@
 export const contestResult = 'contest-result'
-export const contestResultCandidateName = 'contest-result--candidate-name'
 export const contestResultTitle = 'contest-result--title'
 export const contestResultNoSelection = 'contest-result--no-selection'
 export const contestResultVoterSelection = 'contest-result--voter-selection'

@@ -23,9 +23,7 @@ function findPartyById(parties: Parties, id: string): Party {
  * Builds text describing the candidate choice, i.e. name and context.
  */
 function candidateChoice(candidate: Candidate, party?: Party): pdfMake.Content {
-  const parts: pdfMake.Content[] = [
-    text(candidate.name, { style: s.bold }),
-  ]
+  const parts: pdfMake.Content[] = [text(candidate.name, { style: s.bold })]
 
   if (party) {
     parts.push(text(' '), text(`/ ${party.name}`))

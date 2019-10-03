@@ -2,6 +2,7 @@ import * as pdfMake from 'pdfmake/build/pdfmake'
 import * as s from '../definitions'
 
 const NormalFontSize = 11
+const LargeFontSize = 13
 
 const DefaultStyleSheet: Readonly<{ [key: string]: pdfMake.Style }> = {
   [s.contestResultNoSelection]: {
@@ -24,12 +25,16 @@ const DefaultStyleSheet: Readonly<{ [key: string]: pdfMake.Style }> = {
     bold: true,
   },
 
-  [s.contestResultVoterSelectionCandidate]: {
+  [s.bold]: {
     bold: true,
   },
 
-  [s.contestResultVoterSelectionYesno]: {
-    bold: true,
+  [s.italic]: {
+    italics: true,
+  },
+
+  [s.large]: {
+    fontSize: LargeFontSize,
   },
 }
 

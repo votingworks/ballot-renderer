@@ -7,6 +7,6 @@ import text from '../text'
  */
 export default function noSelection(): pdfMake.Content {
   return text('[no selection]', {
-    style: s.contestResultNoSelection,
+    style: [s.large, s.italic],
   })
 }

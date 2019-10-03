@@ -24,7 +24,7 @@ function findPartyById(parties: Parties, id: string): Party {
  */
 function candidateChoice(candidate: Candidate, party?: Party): pdfMake.Content {
   const parts: pdfMake.Content[] = [
-    text(candidate.name, { style: s.contestResultCandidateName }),
+    text(candidate.name, { style: s.bold }),
   ]
 
   if (party) {
@@ -35,7 +35,7 @@ function candidateChoice(candidate: Candidate, party?: Party): pdfMake.Content {
     parts.push(text(' '), text('(write-in)'))
   }
 
-  return text(parts)
+  return text(parts, { style: s.large })
 }
 
 /**

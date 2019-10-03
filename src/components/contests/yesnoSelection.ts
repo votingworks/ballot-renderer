@@ -21,5 +21,5 @@ export default function yesnoSelection(
     selection = 'No'
   }
 
-  return text(selection, { style: s.contestResultVoterSelectionYesno })
+  return text(selection, { style: [s.bold, s.large] })
 }

@@ -28,6 +28,7 @@ export function renderAsPdfContent(
   styles = DefaultStyleSheet
 ): pdfMake.TDocumentDefinitions {
   return {
+    pageSize: 'LETTER' as pdfMake.PageSize,
     content: [makeBallot(ballot)],
     defaultStyle: {
       font: 'HelveticaNeue',

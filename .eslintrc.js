@@ -75,7 +75,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['src/**/*.test.ts', 'test/**/*.ts'],
+      files: ['**/*.test.ts', 'test/expect.ts'],
       env: {
         'jest/globals': true,
       },

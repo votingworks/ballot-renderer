@@ -57,6 +57,7 @@ async function build(): Promise<void> {
 }
 
 build().catch(error => {
+  // eslint-disable-next-line no-console
   console.error(error.stack)
   process.exitCode = 1
 })

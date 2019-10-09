@@ -15,5 +15,5 @@
     "strict": true,
     "target": "es2015"
   },
-  "include": ["src", "scripts", "test"]
+  "include": ["src", "renderers", "scripts", "test"]
 }

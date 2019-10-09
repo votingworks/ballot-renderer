@@ -97,3 +97,44 @@ async function renderAndDoSomethingWithPDF(
   // …
 }
 ```
+
+### Separate ballot document creation from PDF rendering
+
+Sometimes it's useful to be able to separate the ballot document creation step
+from the PDF rendering step. For example, you may wish to generate the ballot
+document in a client and send it to a server for rendering. Here's how you can
+achieve that:
+
+```ts
+// client (e.g. a browser)
+import ballotToDocument from '@votingworks/ballot-renderer/renderers/ballotToDocument'
+
+async function renderPDF(): Promise<Blob> {
+  const response = await fetch('http://localhost:8080/my/render/endpoint', {
+    method: 'POST',
+    body: JSON.stringify(ballotToDocument(completedBallot)),
+  })
+
+  return response.blob()
+}
+
+// server (e.g. nodejs + express)
+import documentToPdf from '@votingworks/ballot-renderer/renderers/documentToPdf'
+import express from 'express'
+
+const app = express()
+
+app.post('/my/render/endpoint', async (req, res) => {
+  const { body } = req
+  const json = new TextDecoder().decode(body)
+  const document = JSON.parse(json)
+  const pdf = await documentToPdf(document)
+
+  res.end(pdf)
+})
+
+app.listen(8080)
+```
+
+See the [renderers](./renderers) folder for all the partial renderings you can
+do.

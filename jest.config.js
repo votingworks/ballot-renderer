@@ -1,9 +1,9 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['<rootDir>/src/**/*.test.ts'],
+  testMatch: ['<rootDir>/{src,renderers}/**/*.test.ts'],
   setupFilesAfterEnv: ['<rootDir>/test/expect.ts'],
-  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
+  collectCoverageFrom: ['src/**/*.ts', 'renderers/**/*.ts', '!**/*.d.ts'],
   coverageThreshold: {
     global: {
       statements: 100,

@@ -1,10 +1,10 @@
 {
   "name": "@votingworks/ballot-renderer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-3.0-or-later",
   "files": [
-    "src/**/*.{js,d.ts,d.ts.map,json}",
-    "!src/**/*.test.*"
+    "{src,renderers}/**/*.{js,d.ts,d.ts.map,json}",
+    "!{src,renderers}/**/*.test.*"
   ],
   "main": "src/index.js",
   "types": "src/index.d.ts",
